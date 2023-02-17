@@ -2,7 +2,7 @@ from common.config import GPU
 
 
 if GPU:
-    import cupy as np
+    import numpy as np
     np.cuda.set_allocator(np.cuda.MemoryPool().malloc)
     np.add.at = np.scatter_add
 
