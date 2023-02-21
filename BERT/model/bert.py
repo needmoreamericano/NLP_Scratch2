@@ -28,7 +28,7 @@ class BERT(nn.Module) :
         
     def forward(self, x, segment_info) :
         # attention masking
-        mask = (x > 0).unsqueeze(1).repeat(1, x.size(1))
+        mask = (x > 0).unsqueeze(1).repeat(1, x.size(1), 1).unsqueeze(1)
         
         # embedding the indexed sequence to sequence of vectors
         x = self.embedding(x, segment_info)
